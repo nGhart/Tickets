@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Back from "./Back";
 import Loading from "./Loading";
 import axios from "axios";
+import { BASE_URL } from "../utilities";
 
 const EditTicket = () => {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ const EditTicket = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://ticket-wnbi.onrender.com/single/${id}`)
+      .get(`${BASE_URL}/single/${id}`)
       .then((response) => {
         setName(response.data.single.name);
         setReceived(response.data.single.received);
@@ -37,7 +38,7 @@ const EditTicket = () => {
     const data = { name, ticket, received, payment, status };
     setLoading(true);
     axios
-      .patch(`https://ticket-wnbi.onrender.com/single/${id}`, data)
+      .patch(`${BASE_URL}/single/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");

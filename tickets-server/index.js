@@ -16,12 +16,14 @@ const {
   getSingleSingle,
   updateSingle,
   deleteSingle,
+  filterTickets,
 } = require("./controllers/singleController");
 
 const app = express();
 app.use(
   cors({
     origin: "https://tickets-ruby.vercel.app",
+    // origin: "http://localhost:5173",
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type"],
   })
@@ -35,16 +37,17 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.post("/double", createDouble);
-app.get("/double", getAllDoubles);
-app.get("/double/:id", getSingleDouble);
-app.patch("/double", updateDouble);
-app.delete("/double/:id", deleteDouble);
+// app.post("/double", createDouble);
+// app.get("/double", getAllDoubles);
+// app.get("/double/:id", getSingleDouble);
+// app.patch("/double", updateDouble);
+// app.delete("/double/:id", deleteDouble);
 app.post("/single", createSingle);
 app.get("/single", getAllSingles);
 app.get("/single/:id", getSingleSingle);
 app.patch("/single/:id", updateSingle);
 app.delete("/single/:id", deleteSingle);
+app.post("/single/filter", filterTickets);
 mongoose
   .connect(MONGO_URI)
   .then(() => {
@@ -54,5 +57,5 @@ mongoose
     console.log("Connected to DB");
   })
   .catch((error) => {
-    console.log(error);
+    console.log("Connection failed" + error);
   });

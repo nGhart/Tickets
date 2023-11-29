@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Back from "./Back";
 import Loading from "./Loading";
 import axios from "axios";
+import { BASE_URL } from "../utilities";
 
 const DeleteTicket = () => {
   const [ticket, setTicket] = useState([]);
@@ -13,7 +14,7 @@ const DeleteTicket = () => {
 
   useEffect(() => {
     axios
-      .get(`https://ticket-wnbi.onrender.com/single/${id}`)
+      .get(`${BASE_URL}/single/${id}`)
       .then((response) => {
         setTicket(response.data.single);
         setLoading(false);
@@ -27,7 +28,7 @@ const DeleteTicket = () => {
   const handleDelete = () => {
     setLoading(true);
     axios
-      .delete(`https://ticket-wnbi.onrender.com/single/${id}`)
+      .delete(`${BASE_URL}/single/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");

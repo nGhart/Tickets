@@ -5,6 +5,7 @@ import Back from "./Back.jsx";
 import Loading from "./Loading.jsx";
 import singleTicket from "../assets/Single.png";
 import doubleTicket from "../assets/Couples.png";
+import { BASE_URL } from "../utilities.js";
 
 const ShowTicket = () => {
   const [ticket, setTicket] = useState([]);
@@ -13,7 +14,7 @@ const ShowTicket = () => {
 
   useEffect(() => {
     axios
-      .get(`https://ticket-wnbi.onrender.com/single/${id}`)
+      .get(`${BASE_URL}/single/${id}`)
       .then((response) => {
         setTicket(response.data.single);
         setLoading(false);

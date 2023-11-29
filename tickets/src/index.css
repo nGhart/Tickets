@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* pagination */
+.pagination {
+  display: flex;
+  flex-direction: row;
+}
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+}
+.page:hover {
+  cursor: pointer;
+}
+
+.pageContainer {
+  display: flex;
+}
+.pages {
+  width: 33px;
+  height: 38px;
+  padding: 6px 12px;
+  background-color: #fff;
+}
+.next {
+  width: 60px;
+  height: 38px;
+  padding: 6px 12px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #fff;
+}
+.prev {
+  width: 60px;
+  height: 38px;
+  padding: 6px 12px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #fff;
+}
+
+.activePage {
+  border: 2px solid rgb(26, 44, 40);
+  width: 33px;
+  height: 38px;
+  padding: 6px 12px;
+}

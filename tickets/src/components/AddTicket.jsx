@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Back from "./Back";
 import Loading from "./Loading";
 import axios from "axios";
+import { BASE_URL } from "../utilities";
 
 const AddTicket = () => {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ const AddTicket = () => {
     const data = { name, ticket, received, payment, status };
     setLoading(true);
     axios
-      .post("https://ticket-wnbi.onrender.com/single", data)
+      .post(`${BASE_URL}/single`, data)
       .then(() => {
         setLoading(false);
         navigate("/");
