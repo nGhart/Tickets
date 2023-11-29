@@ -21,7 +21,8 @@ const {
 const app = express();
 app.use(
   cors({
-    origin: "https://tickets-ruby.vercel.app",
+    // origin: "https://tickets-ruby.vercel.app",
+    origin: ["http://localhost:5173", "*"],
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type"],
   })
