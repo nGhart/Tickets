@@ -50,7 +50,7 @@ const Tickets = () => {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 7;
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
   const itemsShown = tickets.slice(firstIndex, lastIndex);
@@ -83,7 +83,7 @@ const Tickets = () => {
       </Link>
       <div>
         <form
-          className="max-w-sm bg-white border p-3  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          className="max-w-sm bg-white border p-3  border-gray-200 rounded-lg shadow  dark:border-gray-700"
           onSubmit={handleFilter}
         >
           <h1 className="text-center">Filter</h1>
@@ -94,7 +94,7 @@ const Tickets = () => {
             <input
               type="text"
               placeholder="Enter name"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-200 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-200 p-2.5   dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               style={{ border: "2px solid grey" }}
               name="name"
               onChange={(e) =>
