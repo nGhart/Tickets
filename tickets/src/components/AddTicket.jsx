@@ -17,7 +17,7 @@ const AddTicket = () => {
     const data = { name, ticket, received, payment, status };
     setLoading(true);
     axios
-      .post("http://localhost:4111/single", data)
+      .post("https://ticket-wnbi.onrender.com/single", data)
       .then(() => {
         setLoading(false);
         navigate("/");

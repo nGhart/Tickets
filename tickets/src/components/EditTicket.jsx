@@ -17,7 +17,7 @@ const EditTicket = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4111/single/${id}`)
+      .get(`https://ticket-wnbi.onrender.com/single/${id}`)
       .then((response) => {
         setName(response.data.single.name);
         setReceived(response.data.single.received);
@@ -37,7 +37,7 @@ const EditTicket = () => {
     const data = { name, ticket, received, payment, status };
     setLoading(true);
     axios
-      .patch(`http://localhost:4111/single/${id}`, data)
+      .patch(`https://ticket-wnbi.onrender.com/single/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");

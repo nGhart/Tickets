@@ -11,7 +11,7 @@ const Tickets = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("http://localhost:4111/single")
+      .get("https://ticket-wnbi.onrender.com/single")
       .then((response) => {
         setTickets(response.data.singles);
         setLoading(false);

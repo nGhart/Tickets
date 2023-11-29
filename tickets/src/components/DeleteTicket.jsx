@@ -13,7 +13,7 @@ const DeleteTicket = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4111/single/${id}`)
+      .get(`https://ticket-wnbi.onrender.com/single/${id}`)
       .then((response) => {
         setTicket(response.data.single);
         setLoading(false);
@@ -27,7 +27,7 @@ const DeleteTicket = () => {
   const handleDelete = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:4111/single/${id}`)
+      .delete(`https://ticket-wnbi.onrender.com/single/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");
