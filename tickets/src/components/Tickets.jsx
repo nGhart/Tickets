@@ -82,6 +82,9 @@ const Tickets = () => {
         </h3>
       </Link>
       <div>
+        <button>
+        <a href="https://wa.link/y3jczy">whatsapp</a>
+      </button>
         <form
           className="max-w-sm bg-white border p-3  border-gray-200 rounded-lg shadow  dark:border-gray-700"
           onSubmit={handleFilter}
